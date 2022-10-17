@@ -12,10 +12,9 @@ namespace class_telecomando
     {
         private string Produttore;
         private string Modello;
-        private string Modalità;
 
-        private int Canale;
-        private int Volume;
+  
+     
         private Class_televisore televisore;
 
 
@@ -25,12 +24,11 @@ namespace class_telecomando
             Modello = ilmodello;
         }
 
-        public Class_telecomando(string prod, string mod, int funz, Class_televisore televisore)
+        public Class_telecomando(string prod, string mod, int funz, Class_televisore iltelevisore)
         {
             Produttore = prod;
             Modello = mod;
-            Volume = 0;
-            Canale = 1;
+            televisore = iltelevisore;
         }
 
 
@@ -92,7 +90,7 @@ namespace class_telecomando
 
         public int getCanale()
         {
-            return Canale;
+            return televisore.getCanale();
         }
 
         public void setTV(Class_televisore latv)
