@@ -18,7 +18,7 @@ namespace class_telecomando
         public Form1()
         {
             InitializeComponent();
-            tv = new Class_televisore("SAMSUNG", "FROCIO");
+            tv = new Class_televisore("SAMSUNG", "skyglass");
             t = new Class_telecomando("Sony","x5 Bravia",1,tv);
         }
 

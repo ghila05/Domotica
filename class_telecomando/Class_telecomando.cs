@@ -28,7 +28,7 @@ namespace class_telecomando
         {
             Produttore = prod;
             Modello = mod;
-            televisore = iltelevisore;
+            televisore = iltelevisore;  // RICORDA DI ASSOCIARE IL TELEVISORE
         }
 
 
