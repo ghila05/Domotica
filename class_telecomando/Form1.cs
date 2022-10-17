@@ -13,21 +13,26 @@ namespace class_telecomando
     public partial class Form1 : Form
     {
         private Class_telecomando t;
+        private Class_televisore tv;
 
         public Form1()
         {
             InitializeComponent();
-            t = new Class_telecomando("Sony","x5 Bravia");
+            tv = new Class_televisore("SAMSUNG", "FROCIO");
+            t = new Class_telecomando("Sony","x5 Bravia",1,tv);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
             t.accendi();
             label3.Text=("Stato: On");
+            
             butn_alzavol.Visible = true;
             butn_abbassavol.Visible = true;
             textBox1.Visible = true;
             label2.Visible = true;
+          
         }
 
         private void butn_spegni_Click(object sender, EventArgs e)

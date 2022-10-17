@@ -6,14 +6,18 @@ using System.Threading.Tasks;
 
 namespace class_telecomando
 {
+
+
     internal class Class_telecomando
     {
         private string Produttore;
         private string Modello;
         private string Modalità;
-        private bool Stato = false;
+
         private int Canale;
         private int Volume;
+        private Class_televisore televisore;
+
 
         public Class_telecomando(string ilproduttore, string ilmodello)
         {
@@ -21,53 +25,64 @@ namespace class_telecomando
             Modello = ilmodello;
         }
 
+        public Class_telecomando(string prod, string mod, int funz, Class_televisore televisore)
+        {
+            Produttore = prod;
+            Modello = mod;
+            Volume = 0;
+            Canale = 1;
+        }
+
+
         public void accendi()
         {
-            if (Stato == false)
+            if (televisore != null && televisore.getStato() == false)
             {
-                Stato = true;
+                televisore.accendi();
             }
-            
+
         }
 
         public void spegni()
         {
-            if (Stato == true)
+            if (televisore != null && televisore.getStato() == true)
             {
-                Stato = false;
+                televisore.spegni();
             }
         }
 
         public void AlzaVolume()
         {
-            if(Volume == 100)
+            if (televisore != null) 
             {
-                throw new Exception("max volume");
+                televisore.AlzaVol();
             }
-            Volume++;
-
+          
         }
 
         public void AbbassaVolume()
         {
-            if (Volume == 0)
-            {
-                throw new Exception("min volume");
-            }
-            Volume--;
+            televisore.AbbassaVol();
         }
         public void CambiaCanale(int Newcanale)
         {
-            Canale = Newcanale;
+            televisore.CambiaCanale(Newcanale);
+        }
+        public void setStato(bool statoNuovo)
+        {
+            if (televisore != null)
+            {
+                televisore.setStato(statoNuovo);
+            }
         }
 
         public int getVolume()
         {
-            return Volume;
+            return televisore.getVolume();
         }
         public string getProduttore()
         {
-            return Produttore;
+            return televisore.getProduttore();
         }
 
         public string getModello()
@@ -80,8 +95,17 @@ namespace class_telecomando
             return Canale;
         }
 
-        
+        public void setTV(Class_televisore latv)
+        {
+            televisore = latv;
+        }
+
+        public Class_televisore getTV()
+        {
+            return televisore;
+        }
 
 
     }
 }
+
