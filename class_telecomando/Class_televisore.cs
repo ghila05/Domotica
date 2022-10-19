@@ -100,6 +100,14 @@ namespace class_telecomando
         {
             return stato;
         }
+        public void setProduttore(string ilproduttore)
+        {
+            string produttore = ilproduttore;
+        }
+        public void setModello(string ilmodello)
+        {
+            string modello = ilmodello;
+        }
 
 
     }

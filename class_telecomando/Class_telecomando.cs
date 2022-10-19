@@ -20,8 +20,8 @@ namespace class_telecomando
 
         public Class_telecomando(string ilproduttore, string ilmodello)
         {
-            Produttore = ilproduttore;
-            Modello = ilmodello;
+            televisore.setProduttore(ilproduttore);
+            televisore.setModello(ilmodello);
         }
 
         public Class_telecomando(string prod, string mod, int funz, Class_televisore iltelevisore)
@@ -29,6 +29,7 @@ namespace class_telecomando
             Produttore = prod;
             Modello = mod;
             televisore = iltelevisore;  // RICORDA DI ASSOCIARE IL TELEVISORE
+            
         }
 
 
