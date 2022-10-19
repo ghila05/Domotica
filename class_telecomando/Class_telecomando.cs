@@ -16,7 +16,7 @@ namespace class_telecomando
   
      
         private Class_televisore televisore;
-
+      
 
         public Class_telecomando(string ilproduttore, string ilmodello)
         {
