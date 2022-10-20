@@ -19,8 +19,7 @@ namespace class_telecomando
         int TempAcqua;
         string error;
 
-        public string Produttore { get => produttore; set => produttore = value; } // SONO QUESTI?
-        public string Modalità { get => modalità; set => modalità = value; }
+
 
  
 
@@ -90,18 +89,18 @@ namespace class_telecomando
                 TempAcqua = temp;
             }
         }
-
-        public void setProduttore(string ilproduttore)
+        
+        private void setProduttore(string ilproduttore)
         {
             produttore = ilproduttore;
         }
-
-        public void setModello(string ilmodello)
+        
+        private void setModello(string ilmodello)
         {
             modello = ilmodello;
         }
 
-        public void setNserie(string ilNserie)
+        private void setNserie(string ilNserie)
         {
             Nserie = ilNserie;
         }
