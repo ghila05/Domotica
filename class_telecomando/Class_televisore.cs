@@ -16,7 +16,23 @@ namespace class_telecomando
         private int canale;
         private string[] connettori;
 
+        private float _prezzo
 
+        public float Prezzo
+        {
+            get
+            {
+                return prezzo; // introdizione ai set e get automatici
+            }
+            set
+            {
+                if(value >0)
+                _prezzo = value;
+            }
+
+            
+        }
+        
 
         public Class_televisore()
         { //costruttore, possiamo avere più tipi di costruttori che prendono in ingresso diverse variabili 
