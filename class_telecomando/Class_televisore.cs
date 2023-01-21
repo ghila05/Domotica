@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace class_telecomando
 {
-    internal class Class_televisore
+    public class Class_televisore
     {
 
         private bool stato = false;

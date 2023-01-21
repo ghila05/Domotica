@@ -6,31 +6,130 @@ using System.Threading.Tasks;
 
 namespace class_telecomando
 {
-  
+
     class Class_Caldaia
     {
         string produttore;
         string modello;
-        string Nserie;
-        string Datainstall;
+        string nserie;
+        string datainstall;
         bool stato;
-        string modalità;
-        int TempRiscaldamento;
-        int TempAcqua;
+        string modalita;
+        int tempRiscaldamento;
+        int tempAcqua;
         string error;
 
 
 
- 
+
 
         public Class_Caldaia(string ilproduttore, string ilmodello, string ilNserie)
         {
-            setProduttore(ilproduttore);
-            setModello(ilmodello);
-            setNserie(ilNserie);
-            
+            Produttore = ilproduttore;
+            Modello = ilmodello;
+            NSerie = ilNserie;
         }
 
+        public string Produttore
+        {
+            get
+            {
+                return Produttore;
+            }
+            set
+            {
+                if(value != "")
+                {
+                    produttore = value;
+                }
+            }
+        }
+        public string Modello
+        {
+            get {return modello;}
+            set
+            {
+                if (value != "")
+                {
+                    modello = value;
+                }
+            }
+        }
+
+        public string NSerie
+        {
+            get
+            {
+                return nserie;
+            }
+            set
+            {
+                if (value != "")
+                {
+                    nserie = value;
+                }
+            }
+        }
+
+        public string Datainstall
+        {
+            get
+            {
+                return datainstall;
+            }
+            set
+            {
+                if (value != "")
+                {
+                    datainstall = value;
+                }
+            }
+        }
+
+        public bool Stato { get; set; }
+
+        public string Modalita
+        {
+            get
+            {
+                return modalita;
+            }
+            set
+            {
+                if (value != "")
+                {
+                    modalita = value;
+                }
+
+            }
+        }
+
+        public int TempRiscaldamento
+        {
+            get
+            {
+                return tempRiscaldamento;
+            }
+            set
+            {
+                if (value >= 0 || value <= 100)
+                    tempRiscaldamento = value;
+            }
+        }
+        public int TempAcqua
+        {
+            get
+            {
+                return tempAcqua;
+            }
+            set
+            {
+                if (value >= 0 || value <= 100)
+                    tempAcqua = value;
+            }
+        }
+
+        public string Error { get; }
         public void Accendi()
         {
             if (stato == false)
@@ -56,92 +155,7 @@ namespace class_telecomando
             }
         }
 
-        public void setModalità(int mod)
-        {
-            if (mod == 1)
-            {
-                Modalità = "acqua sanitaria e riscaldamento";
-            }
-            else if (mod == 0)
-            {
-                Modalità = "acqua sanitaria";
-            }
-        }
-      
-        public void setRiscaldamento(int temp)
-        {
-            if (temp > 0 && temp < 30)
-            {
-                TempRiscaldamento = temp;
-            }
-            else
-            {
-                error = "temperatura non rispetta i criteri >0 e <40"; 
-            }
-
-            
-        }
-
-        public void setAcqua(int temp)
-        {
-            if (temp > 0 && temp < 60)
-            {
-                TempAcqua = temp;
-            }
-        }
-        
-        private void setProduttore(string ilproduttore)
-        {
-            produttore = ilproduttore;
-        }
-        
-        private void setModello(string ilmodello)
-        {
-            modello = ilmodello;
-        }
-
-        private void setNserie(string ilNserie)
-        {
-            Nserie = ilNserie;
-        }
-
-        public bool getStato()
-        {
-            return stato;
-        }
-        public string getModello()
-        {
-            return modello;
-        }
-        public string getNserie()
-        {
-            return Nserie;
-        }
-
-        public string getDatainstall()
-        {
-            return Datainstall;
-        }
-
-        public string getMod()
-        {
-            return Modalità;
-        }
-
-        public int getRiscaldamento()
-        {
-            return TempRiscaldamento;
-        }
-
-        public int getAcqua()
-        {
-            return TempAcqua;
-        }
-
-        public string getError()
-        {
-            return error;
-        }
+       
 
     }
 
