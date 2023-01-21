@@ -16,23 +16,70 @@ namespace class_telecomando
         private int canale;
         private string[] connettori;
 
-        private float _prezzo
+        private float prezzo;
 
         public float Prezzo
         {
             get
             {
-                return prezzo; // introdizione ai set e get automatici
+                return prezzo;
             }
             set
             {
                 if(value >0)
-                _prezzo = value;
+                prezzo = value;
             }
 
             
         }
-        
+
+        public bool Stato { set; get; }
+
+        public string Produttore
+        {
+            get
+            {
+                return produttore;
+            }
+            set
+            {
+                if (value != "")
+                {
+                    produttore = value;
+                }
+            }
+        }
+
+        public string Modello
+        {
+            get
+            {
+                return modello;
+            }
+            set
+            {
+                if (value != "")
+                {
+                    modello = value;
+                }
+            }
+        }
+
+        public int Canale
+        {
+            get
+            {
+                return canale;
+            }
+            set
+            {
+                if (value >= 1)
+                {
+                    canale = value;
+                }
+            }
+        }
+
 
         public Class_televisore()
         { //costruttore, possiamo avere più tipi di costruttori che prendono in ingresso diverse variabili 
@@ -88,42 +135,7 @@ namespace class_telecomando
 
 
 
-        public string getProduttore()
-        {
-            return produttore;
-        }
 
-        public string getModello()
-        {
-            return modello;
-        }
-
-        public int getCanale()
-        {
-            return canale;
-        }
-        public int getVolume()
-        {
-            return Volume;
-        }
-
-        public void setStato(bool nuovostato)
-        {
-            bool stato = nuovostato;
-        }
-      
-        public bool getStato()
-        {
-            return stato;
-        }
-        public void setProduttore(string ilproduttore)
-        {
-            string produttore = ilproduttore;
-        }
-        public void setModello(string ilmodello)
-        {
-            string modello = ilmodello;
-        }
 
 
     }
